@@ -22,7 +22,7 @@ case class Point private (x: Int, y: Int):
           Point.make(x - 1, y + 2)
         ).flatten.distinct
 
-    def sequence = next.flatMap { p1 => p1.next.map( p2 => Sequence(this, p1, p2))}
+    def sequence = next.flatMap { p1 => p1.next.map(p2 => Sequence(this, p1, p2)) }
     
     def value = dial(x)(y)
 
@@ -35,5 +35,5 @@ case class Sequence(p1: Point, p2: Point, p3: Point):
 def findSequence(value: Int) = findIndex(value).flatMap(x => Point.make(x._1, x._2)).map(_.sequence).toList.flatten
 
 @main
-def main =
+def dialer =
   println(findSequence(6).mkString("\n"))
