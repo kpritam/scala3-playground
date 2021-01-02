@@ -1,3 +1,5 @@
+package algos
+
 def swap(i: Int, j: Int, arr: Array[Int]): Array[Int] = arr.updated(i, arr(j)).updated(j, arr(i)) 
 
 def reorder(index: Int, arr: Array[Int], by: (Int, Int) => Boolean): Array[Int] = {

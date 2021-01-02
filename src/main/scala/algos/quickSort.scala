@@ -1,3 +1,5 @@
+package algos
+
 def swap0(i: Int, j: Int, arr: Array[Int]) = {
     val temp = arr(i) 
     arr(i) = arr(j); 

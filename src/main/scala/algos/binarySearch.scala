@@ -1,3 +1,4 @@
+package algos
 
 def search(arr: Array[Int], input: Int) = {
     def bs(l: Int, r: Int): Int = {
