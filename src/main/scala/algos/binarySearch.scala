@@ -1,18 +1,20 @@
 package algos
 
-def search(arr: Array[Int], input: Int) = {
-    def bs(l: Int, r: Int): Int = {
-        val mid = (l + r) / 2
-        if (mid <= 0 || mid >= arr.length) -1
-        else if (arr(mid) == input) mid
-        else if (arr(mid) > input) bs(l, mid - 1)
-        else bs(mid + 1, r)
-    }
+import scala.annotation.tailrec
 
-    bs(0, arr.length)
+def search(arr: Array[Int], input: Int) = {
+  @tailrec
+  def bs(l: Int, r: Int): Int = {
+    val mid = (l + r) / 2
+    if mid <= 0 || mid >= arr.length then -1
+    else if arr(mid) == input then mid
+    else if arr(mid) > input then bs(l, mid - 1)
+    else bs(mid + 1, r)
+  }
+
+  bs(0, arr.length)
 }
 
-@main
-def binarySearch = 
-    val input = Array(1, 5, 9, 11)
-    println(search(input, 9))
+@main def binarySearch(): Unit =
+  val input = Array(1, 5, 9, 11)
+  println(search(input, 9))
