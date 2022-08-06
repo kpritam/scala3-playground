@@ -43,4 +43,3 @@ object ListApp:
     print("List.flatmap: ")
     List(1, 2, 3, 4).flatmap(a => List(a, a * 2)).foreach(print)
     println()
-    println("=" * 40)

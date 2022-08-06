@@ -44,4 +44,3 @@ object TreeApp:
     print(s"Tree.map: ")
     tree.map(_ * 2).foreach(print)
     println()
-    println("=" * 40)
